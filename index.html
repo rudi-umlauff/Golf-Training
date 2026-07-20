@@ -1,189 +1,352 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#173f2a">
-<title>Rudi Golf Saisonplan 2026</title>
+<title>Rudi Golf Performance</title>
 <style>
-:root{--bg:#f3f5f1;--card:#fff;--ink:#142218;--muted:#68736c;--line:#dfe5df;--accent:#1f5f3b;--dark:#173f2a;--soft:#dcebdd;--soft2:#edf4ee;--shadow:0 10px 26px rgba(20,34,24,.07)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);-webkit-text-size-adjust:100%}
-header{padding:calc(22px + env(safe-area-inset-top)) 18px 18px;background:linear-gradient(180deg,#e8f0e8,var(--bg));}
-.kicker{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:800}
-h1{font-size:clamp(38px,10vw,58px);line-height:.96;letter-spacing:-.045em;margin:10px 0}
-.sub{color:var(--muted);line-height:1.5;max-width:760px}
-nav{position:sticky;top:0;z-index:20;background:rgba(243,245,241,.94);backdrop-filter:blur(14px);border-block:1px solid var(--line)}
+:root{
+ --bg:#f3f5f1;--card:#fff;--ink:#102117;--muted:#69756e;--line:#dce3dd;
+ --green:#1f5f3b;--dark:#173f2a;--soft:#e4efe5;--soft2:#f0f5f0;
+ --shadow:0 10px 26px rgba(20,34,24,.07)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;background:var(--bg);color:var(--ink);
+ font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Arial,sans-serif;
+ -webkit-text-size-adjust:100%
+}
+header{
+ padding:calc(22px + env(safe-area-inset-top)) 18px 20px;
+ background:linear-gradient(180deg,#e8f0e8 0%,var(--bg) 100%)
+}
+.kicker{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--green);font-weight:800}
+h1{font-size:clamp(38px,11vw,60px);line-height:.94;letter-spacing:-.05em;margin:10px 0 12px}
+.sub{color:var(--muted);line-height:1.5;max-width:760px;margin:0}
+nav{
+ position:sticky;top:0;z-index:30;background:rgba(243,245,241,.94);
+ backdrop-filter:blur(16px);border-block:1px solid var(--line)
+}
 nav .wrap{display:flex;gap:6px;overflow:auto;padding:10px 12px;-webkit-overflow-scrolling:touch}
 nav a{white-space:nowrap;text-decoration:none;color:var(--ink);font-size:14px;font-weight:750;padding:10px 13px;border-radius:999px}
-main{max-width:1080px;margin:auto;padding:14px 12px 54px}
+main{max-width:1060px;margin:auto;padding:14px 12px 60px}
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
 .s12{grid-column:span 12}.s8{grid-column:span 8}.s7{grid-column:span 7}.s6{grid-column:span 6}.s5{grid-column:span 5}.s4{grid-column:span 4}
 .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow)}
-h2{font-size:23px;line-height:1.15;margin:0 0 13px}h3{font-size:17px;margin:0 0 8px}
-.small{font-size:13px;color:var(--muted)}.big{font-size:32px;font-weight:850;letter-spacing:-.04em}
-.badge{display:inline-block;background:var(--soft);color:var(--accent);font-size:12px;font-weight:800;padding:6px 10px;border-radius:999px}
+h2{font-size:23px;line-height:1.16;margin:0 0 13px} h3{font-size:17px;margin:0}
+.small{font-size:13px;color:var(--muted)} .big{font-size:32px;font-weight:850;letter-spacing:-.04em}
+.badge{display:inline-block;background:var(--soft);color:var(--green);font-size:12px;font-weight:800;padding:7px 10px;border-radius:999px}
 .metric{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-.progress{height:13px;background:#edf0ec;border-radius:999px;overflow:hidden}.progress div{height:100%;width:0;background:var(--accent);transition:.25s}
-.week-select{display:flex;gap:8px;overflow:auto;padding:2px 2px 8px;-webkit-overflow-scrolling:touch}
-.week-btn{border:1px solid var(--line);background:white;color:var(--ink);padding:10px 14px;border-radius:999px;font-weight:800;white-space:nowrap;min-height:44px}
-.week-btn.active{background:var(--dark);color:white;border-color:var(--dark)}
-.phase{background:var(--soft2);border-radius:14px;padding:13px;margin-top:12px}
-.day{padding:13px 0;border-top:1px solid var(--line)}.day:first-child{border-top:none}.day strong{display:block;color:var(--accent);font-size:13px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
-.section-title{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
-.task{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:14px 0;border-top:1px solid var(--line)}.task:first-of-type{border-top:none}
-.task input{width:22px;height:22px;accent-color:var(--accent);margin-top:1px}.task label{font-size:16px;line-height:1.45}
-.task .video{grid-column:2;justify-self:start;text-decoration:none;background:var(--soft2);color:var(--accent);font-size:12px;font-weight:800;padding:9px 13px;border-radius:999px}
-.note{background:#f7faf7;border-left:4px solid var(--accent);padding:14px;border-radius:12px;line-height:1.5}
-table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:10px 7px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{font-size:12px;text-transform:uppercase;color:var(--muted)}
-input[type=text],input[type=number],select,textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px 12px;font:inherit;font-size:16px;background:white;color:var(--ink)}
-button.action{border:0;border-radius:12px;padding:12px 14px;background:var(--accent);color:white;font-weight:800;min-height:46px;width:100%}
-.actions{display:grid;gap:10px}
-.footer{text-align:center;color:var(--muted);font-size:13px;padding:28px 0 calc(28px + env(safe-area-inset-bottom))}
+.progress{height:13px;background:#edf0ec;border-radius:999px;overflow:hidden} .progress div{height:100%;width:0;background:var(--green);transition:.2s}
+.weekbar{display:flex;gap:8px;overflow:auto;padding:2px 2px 8px;-webkit-overflow-scrolling:touch}
+.weekbtn{border:1px solid var(--line);background:white;color:var(--ink);padding:10px 14px;border-radius:999px;font-weight:800;white-space:nowrap;min-height:44px}
+.weekbtn.active{background:var(--dark);color:white;border-color:var(--dark)}
+.phasebox{background:var(--soft2);border-radius:15px;padding:14px;margin-top:10px}
+.day{padding:14px 0;border-top:1px solid var(--line)} .day:first-of-type{border-top:none}
+.day strong{display:block;color:var(--green);font-size:12px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
+.titleRow{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.task{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:14px 0;border-top:1px solid var(--line)}
+.task:first-of-type{border-top:none}
+.task input{width:22px;height:22px;accent-color:var(--green);margin-top:1px}
+.task label{font-size:16px;line-height:1.45}
+.ref{grid-column:2;display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
+.video{display:inline-flex;align-items:center;text-decoration:none;background:var(--soft2);color:var(--green);font-size:12px;font-weight:800;padding:9px 13px;border-radius:999px}
+.note{background:#f7faf7;border-left:4px solid var(--green);padding:14px;border-radius:12px;line-height:1.5}
+input[type=text],input[type=number],select,textarea{
+ width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;font:inherit;font-size:16px;background:white;color:var(--ink)
+}
+label.field{display:block;font-size:13px;font-weight:750;color:var(--muted)}
+label.field input,label.field select,label.field textarea{margin-top:6px}
+button.action{border:0;border-radius:12px;padding:12px 14px;background:var(--green);color:white;font-weight:800;min-height:46px}
+button.secondary{background:#e9eeea;color:var(--ink)}
+button.danger{background:#f5e8e8;color:#7a2828}
+.actions{display:flex;gap:9px;flex-wrap:wrap}
+.courseList{display:grid;gap:8px;margin-top:12px}
+.courseItem{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--soft2);padding:10px 12px;border-radius:12px}
+.courseItem button{border:0;background:transparent;color:#8a3030;font-weight:800;padding:6px}
+table{width:100%;border-collapse:collapse;font-size:14px} th,td{padding:10px 7px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top} th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.footer{text-align:center;color:var(--muted);font-size:13px;padding:28px 0 calc(30px + env(safe-area-inset-bottom))}
 @media(max-width:900px){.s8,.s7,.s6,.s5,.s4{grid-column:span 12}}
-@media(max-width:700px){.grid{display:block}.card{margin-bottom:14px;border-radius:18px;padding:17px 16px}.card .grid{display:block}#seasonTable thead{display:none}#seasonTable,#seasonTable tbody,#seasonTable tr,#seasonTable td{display:block;width:100%}#seasonTable tr{padding:12px 0;border-bottom:1px solid var(--line)}#seasonTable td{border:0;padding:2px 0}#seasonTable td:first-child{font-weight:800;color:var(--accent)}}
+@media(max-width:700px){
+ .grid{display:block} .card{margin-bottom:14px;border-radius:18px;padding:17px 16px} .card .grid{display:block}
+ .actions{display:grid} .actions button{width:100%}
+ #roundTable thead{display:none} #roundTable,#roundTable tbody,#roundTable tr,#roundTable td{display:block;width:100%}
+ #roundTable tr{padding:12px 0;border-bottom:1px solid var(--line)} #roundTable td{border:0;padding:2px 0}
+ #roundTable td::before{content:attr(data-label);display:block;font-size:11px;text-transform:uppercase;color:var(--muted);font-weight:800}
+}
 </style>
 </head>
 <body>
 <header>
-<div class="kicker">Golfclub München-Riem · Saison 2026</div>
+<div class="kicker">Golf Performance · Saison 2026</div>
 <h1>Road to Single Handicap</h1>
-<p class="sub">Saisonplan von Juli bis Dezember 2026. Jede Kalenderwoche ist einzeln auswählbar, besitzt eigene Häkchen und einen eigenen Fortschritt.</p>
+<p class="sub">Ein mobiler Saisonplan mit separatem Fortschritt für jede Kalenderwoche, Golf-, Kraft- und Mobility-Einheiten, geprüften Referenzen und frei verwaltbaren Golfplätzen.</p>
 </header>
-<nav><div class="wrap"><a href="#dashboard">Dashboard</a><a href="#week">Woche</a><a href="#golf">Golf</a><a href="#fitness">Kraft & Mobility</a><a href="#season">Saison</a><a href="#tracker">Tracker</a></div></nav>
+
+<nav><div class="wrap">
+<a href="#dashboard">Dashboard</a><a href="#week">Woche</a><a href="#golf">Golf</a>
+<a href="#strength">Kraft</a><a href="#mobility">Mobility</a><a href="#courses">Golfplätze</a><a href="#tracker">Runden</a>
+</div></nav>
+
 <main>
 <section id="dashboard" class="grid">
-<div class="card s4"><div class="small">Saisonzeitraum</div><div class="big">24 Wochen</div><p class="small">KW 30 bis KW 53 · Juli bis Dezember 2026</p></div>
+<div class="card s4"><div class="small">Saison</div><div class="big">24 Wochen</div><p class="small">KW 30 bis Jahresende.</p></div>
 <div class="card s4"><div class="small">Etappenziel</div><div class="big">HCP &lt; 36</div><p class="small">Danach weitere Reduktion über Turnier- und Winterphase.</p></div>
-<div class="card s4"><div class="small">Wochenstruktur</div><div class="big">Mo–So</div><p class="small">Samstag ohne festes Krafttraining.</p></div>
+<div class="card s4"><div class="small">Rhythmus</div><div class="big">Mo–So</div><p class="small">Samstag ohne festes Krafttraining.</p></div>
 <div class="card s8">
-<div class="metric"><div><h2 id="progressTitle">Wochenfortschritt</h2><div class="small">Nur die ausgewählte Kalenderwoche wird gewertet.</div></div><div class="big" id="progressLabel">0%</div></div>
+<div class="metric"><div><h2 id="progressTitle">Wochenfortschritt</h2><div class="small">Nur die ausgewählte Kalenderwoche wird gewertet.</div></div><div class="big" id="progressPct">0%</div></div>
 <div class="progress"><div id="progressBar"></div></div>
 </div>
-<div class="card s4"><span class="badge" id="phaseBadge">Phase</span><h2 style="margin-top:10px" id="phaseTitle">–</h2><p class="small" id="phaseFocus">–</p></div>
+<div class="card s4"><span class="badge" id="phaseBadge">Phase</span><h2 style="margin-top:10px" id="phaseName">–</h2><p class="small" id="phaseFocus">–</p></div>
 </section>
 
 <section id="week" class="grid" style="margin-top:14px">
 <div class="card s12">
-<div class="section-title"><h2>Kalenderwoche auswählen</h2><span class="badge" id="weekBadge">–</span></div>
-<div class="week-select" id="weekSelect"></div>
-<div class="phase"><b id="weekVolume"></b><br><span class="small" id="weekDates"></span></div>
+<div class="titleRow"><h2>Kalenderwoche</h2><span class="badge" id="currentWeekBadge">–</span></div>
+<div class="weekbar" id="weekbar"></div>
+<div class="phasebox"><b id="weekDates">–</b><br><span class="small" id="weekFocus">–</span></div>
 <div class="day"><strong>Montag</strong><b>Kraft A – Unterkörper, Brust & Core</b><br>Beine, Hüftstreckung, Brust, Trizeps und Anti-Rotation.</div>
-<div class="day"><strong>Dienstag</strong><b>Golf – Range</b><br>Kontakt, Technikblock, Zielkorridor und simulierte Löcher.</div>
+<div class="day"><strong>Dienstag</strong><b>Golf – Range</b><br>Kontakt, Zielkontrolle und variable Praxis.</div>
 <div class="day"><strong>Mittwoch</strong><b>Mobility & aktive Erholung</b><br>Brustwirbelsäule, Hüfte, Sprunggelenk und Schulter.</div>
-<div class="day"><strong>Donnerstag</strong><b>Kraft B – Ganzkörper</b><br>Einbeinige Kraft, Schultern, Zugbewegung, Gesäß und Core.</div>
-<div class="day"><strong>Freitag</strong><b>Golf – kurzes Spiel</b><br>Putten, Chippen und 30/50/70-m-Pitches.</div>
-<div class="day"><strong>Samstag</strong><b>Frei / optional Golf</b><br>Keine feste Krafteinheit. Optional lockere Range, Runde oder Mobility.</div>
+<div class="day"><strong>Donnerstag</strong><b>Kraft B – Ganzkörper</b><br>Einbeinige Kraft, Schulter, Zugbewegung, Gesäß und Core.</div>
+<div class="day"><strong>Freitag</strong><b>Golf – kurzes Spiel</b><br>Putten, Chippen und Pitch-Distanzen.</div>
+<div class="day"><strong>Samstag</strong><b>Frei / optional Golf</b><br>Keine feste Krafteinheit.</div>
 <div class="day"><strong>Sonntag</strong><b>Golf – 9 oder 18 Loch</b><br>Course Management und vollständige Statistik.</div>
 </div>
 </section>
 
 <section id="golf" class="grid" style="margin-top:14px">
 <div class="card s6">
-<div class="section-title"><h2>Golf · Range</h2><span class="badge">Dienstag</span></div>
-<div class="task"><input class="weekly" data-task="range-warmup" type="checkbox"><label><b>Warm-up:</b> Mobilisieren, halbe Schwünge, zehn lockere Wedge-/9i-Schläge.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=PGA+golf+dynamic+warm+up">Video</a></div>
-<div class="task"><input class="weekly" data-task="lowpoint" type="checkbox"><label><b>Bodenlinien-Drill:</b> 20 bewertete Bälle. Ball zuerst, Boden danach.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=golf+low+point+line+drill+ball+first">Video</a></div>
-<div class="task"><input class="weekly" data-task="techblock" type="checkbox"><label><b>Technikblock:</b> 5 Probeschwünge, 5 Drill-Bälle, 5 normale Bälle.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=golf+practice+block+drill+transfer+practice">Video</a></div>
-<div class="task"><input class="weekly" data-task="corridor" type="checkbox"><label><b>Zielkorridor:</b> mindestens 6 von 10 Bällen spielbar.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=golf+dispersion+target+practice+drill">Video</a></div>
-<div class="task"><input class="weekly" data-task="simholes" type="checkbox"><label><b>Drei simulierte Löcher:</b> Schläger wechseln und vollständige Routine.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=golf+range+simulate+holes+practice">Video</a></div>
+<div class="titleRow"><h2>Golf · Range</h2><span class="badge">Dienstag</span></div>
+<div class="task"><input class="weekly" data-task="range_warmup" type="checkbox"><label><b>Golf-Warm-up:</b> 5 Minuten dynamisch, danach 10 halbe Wedge-Schläge.</label><div class="ref"><a class="video" target="_blank" href="https://www.mytpi.com/articles/fitness/dynamic-warm-up-for-golf">TPI Warm-up</a></div></div>
+<div class="task"><input class="weekly" data-task="strike" type="checkbox"><label><b>Kontaktblock:</b> „One and Two“-Drill für Ball-vor-Boden-Kontakt. 3 × 8 Bälle.</label><div class="ref"><a class="video" target="_blank" href="https://meandmygolf.com/golf-tips/irons-tips/the-one-drill-you-need-for-a-consistent-strike-with-your-irons/">Exakter Drill</a></div></div>
+<div class="task"><input class="weekly" data-task="setup" type="checkbox"><label><b>Setup-Kontrolle:</b> Abstand zum Ball, Druck mittig über den Füßen und ausgewogene Haltung.</label><div class="ref"><a class="video" target="_blank" href="https://meandmygolf.com/golf-tips/irons-tips/our-3-top-tips-for-consistent-iron-play/">Setup-Video</a></div></div>
+<div class="task"><input class="weekly" data-task="target" type="checkbox"><label><b>Zielkorridor:</b> 20 Bälle mit einem klaren Ziel; Treffer als gut, spielbar oder Fehler werten.</label><div class="ref"><a class="video" target="_blank" href="https://meandmygolf.com/golf-tips/irons-tips/how-the-worlds-best-players-get-ball-then-turf-contact/">Kontakt-Referenz</a></div></div>
+<div class="task"><input class="weekly" data-task="simholes" type="checkbox"><label><b>Variable Praxis:</b> Drei imaginäre Löcher spielen und nach jedem Schlag den Schläger wechseln.</label></div>
 </div>
+
 <div class="card s6">
-<div class="section-title"><h2>Golf · kurzes Spiel</h2><span class="badge">Freitag</span></div>
-<div class="task"><input class="weekly" data-task="putt1m" type="checkbox"><label><b>1-Meter-Putts:</b> 30 Versuche, Ziel mindestens 20 Treffer.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=PGA+one+meter+putting+drill">Video</a></div>
-<div class="task"><input class="weekly" data-task="lagputt" type="checkbox"><label><b>Distanzputten:</b> 5, 8 und 12 Meter.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=PGA+lag+putting+distance+control+drill">Video</a></div>
-<div class="task"><input class="weekly" data-task="chip" type="checkbox"><label><b>Standardschip:</b> kurze, mittlere und schwierige Lage.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=PGA+basic+chip+shot+drill">Video</a></div>
-<div class="task"><input class="weekly" data-task="pitch" type="checkbox"><label><b>Pitch-Leiter:</b> 30, 50 und 70 Meter.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=golf+wedge+distance+ladder+30+50+70">Video</a></div>
+<div class="titleRow"><h2>Golf · kurzes Spiel</h2><span class="badge">Freitag</span></div>
+<div class="task"><input class="weekly" data-task="shortputt" type="checkbox"><label><b>Kurze Putts:</b> 30 Putts aus 1 Meter, Ziel mindestens 20 Treffer.</label><div class="ref"><a class="video" target="_blank" href="https://meandmygolf.com/golf-tips/beginner-golf-tips/live-beginner-lesson-golf-basics-all-golfers-need-to-know/">Putting-Basics</a></div></div>
+<div class="task"><input class="weekly" data-task="paceputt" type="checkbox"><label><b>Distanzkontrolle:</b> 5, 8 und 12 Meter; Bälle innerhalb einer Schlägerlänge stoppen.</label><div class="ref"><a class="video" target="_blank" href="https://shop.meandmygolf.com/en-us/products/the-gatekeeper">Pace-Control-Video</a></div></div>
+<div class="task"><input class="weekly" data-task="chipping" type="checkbox"><label><b>Standardschip:</b> PW oder GW, drei Landezonen und 30 Bälle.</label><div class="ref"><a class="video" target="_blank" href="https://meandmygolf.com/golf-tips/short-game-tips/rickie-fowler-short-game-pitching-chipping-wedge-tips/">Chipping & Pitching</a></div></div>
+<div class="task"><input class="weekly" data-task="pitching" type="checkbox"><label><b>Pitch-Leiter:</b> 30, 50 und 70 Meter; je 9 Bälle und durchschnittliche Abweichung notieren.</label><div class="ref"><a class="video" target="_blank" href="https://meandmygolf.com/golf-tips/short-game-tips/rickie-fowler-short-game-pitching-chipping-wedge-tips/">Pitch-Technik</a></div></div>
 </div>
+
 <div class="card s12">
-<div class="section-title"><h2>Golf · Platzrunde</h2><span class="badge">Sonntag</span></div>
-<div class="task"><input class="weekly" data-task="round" type="checkbox"><label><b>9 oder 18 Loch gespielt:</b> sicherer Abschlagschläger, taktisches Par 5/7/8.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=golf+course+management+high+handicap+beginner">Video</a></div>
-<div class="task"><input class="weekly" data-task="stats" type="checkbox"><label><b>Statistik erfasst:</b> Score, Putts, Strafschläge, Abschläge im Spiel, Fehltreffer und Schläge unter 50 m.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=golf+stats+tracking+improve+handicap">Video</a></div>
+<div class="titleRow"><h2>Golf · Platzrunde</h2><span class="badge">Sonntag</span></div>
+<div class="task"><input class="weekly" data-task="round_played" type="checkbox"><label><b>Runde gespielt:</b> 9 oder 18 Loch auf einem frei ausgewählten Platz.</label></div>
+<div class="task"><input class="weekly" data-task="round_stats" type="checkbox"><label><b>Runde erfasst:</b> Score, Putts, Strafschläge, Abschläge im Spiel, Fehltreffer und Schläge unter 50 Meter.</label></div>
+<p class="note"><b>Course Management:</b> Nach einem Fehler zuerst wieder in eine normale Spielsituation kommen. Keine unnötigen Hero-Shots.</p>
 </div>
 </section>
 
-<section id="fitness" class="grid" style="margin-top:14px">
+<section id="strength" class="grid" style="margin-top:14px">
 <div class="card s6">
-<div class="section-title"><h2>Kraft A</h2><span class="badge">Montag</span></div>
-<div class="task"><input class="weekly" data-task="squat" type="checkbox"><label><b>Goblet Squat:</b> 3 × 6–8.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=goblet+squat+proper+form">Video</a></div>
-<div class="task"><input class="weekly" data-task="rdl" type="checkbox"><label><b>Romanian Deadlift:</b> 3 × 6–8.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=romanian+deadlift+proper+form">Video</a></div>
-<div class="task"><input class="weekly" data-task="bench" type="checkbox"><label><b>Kurzhantel-Bankdrücken oder Liegestütz:</b> 3 × 8–10.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=dumbbell+bench+press+proper+form">Video</a></div>
-<div class="task"><input class="weekly" data-task="pallof" type="checkbox"><label><b>Pallof Press:</b> 3 × 10 je Seite.</label><a class="video" target="_blank" href="https://www.mytpi.com/articles/fitness/7-anti-rotation-exercises-to-maximize-clubhead-speed">Video</a></div>
+<div class="titleRow"><h2>Kraft A</h2><span class="badge">Montag</span></div>
+<div class="task"><input class="weekly" data-task="goblet" type="checkbox"><label><b>Kettlebell Goblet Squat:</b> 3 × 6–8.</label><div class="ref"><a class="video" target="_blank" href="https://www.muscleandstrength.com/exercises/kettlebell-goblet-squat">Übungsvideo</a></div></div>
+<div class="task"><input class="weekly" data-task="rdl" type="checkbox"><label><b>Romanian Deadlift:</b> 3 × 6–8.</label><div class="ref"><a class="video" target="_blank" href="https://www.muscleandstrength.com/exercises/romanian-deadlift">Übungsvideo</a></div></div>
+<div class="task"><input class="weekly" data-task="bench" type="checkbox"><label><b>Dumbbell Bench Press:</b> 3 × 8–10.</label><div class="ref"><a class="video" target="_blank" href="https://www.muscleandstrength.com/exercises/dumbbell-bench-press.html">Übungsvideo</a></div></div>
+<div class="task"><input class="weekly" data-task="pallof" type="checkbox"><label><b>Pallof Press:</b> 3 × 10 je Seite.</label><div class="ref"><a class="video" target="_blank" href="https://www.mytpi.com/articles/fitness/7-anti-rotation-exercises-to-maximize-clubhead-speed">TPI Anti-Rotation</a></div></div>
+<div class="task"><input class="weekly" data-task="calves" type="checkbox"><label><b>Standing Calf Raise:</b> 3 × 12–15.</label><div class="ref"><a class="video" target="_blank" href="https://www.muscleandstrength.com/exercises/standing-calf-raise.html">Übungsvideo</a></div></div>
 </div>
+
 <div class="card s6">
-<div class="section-title"><h2>Kraft B</h2><span class="badge">Donnerstag</span></div>
-<div class="task"><input class="weekly" data-task="lunge" type="checkbox"><label><b>Reverse Lunge:</b> 3 × 8 je Seite.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=reverse+lunge+proper+form">Video</a></div>
-<div class="task"><input class="weekly" data-task="shoulder" type="checkbox"><label><b>Halbkniendes Schulterdrücken:</b> 3 × 8 je Seite.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=half+kneeling+dumbbell+shoulder+press+proper+form">Video</a></div>
-<div class="task"><input class="weekly" data-task="row" type="checkbox"><label><b>Einarmiges Rudern:</b> 3 × 8–10 je Seite.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=one+arm+dumbbell+row+proper+form">Video</a></div>
-<div class="task"><input class="weekly" data-task="hip" type="checkbox"><label><b>Hip Thrust / Glute Bridge:</b> 3 × 10–12.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=glute+bridge+proper+form">Video</a></div>
-<div class="task"><input class="weekly" data-task="carry" type="checkbox"><label><b>Suitcase Carry:</b> 3 × 25–40 m je Seite.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=suitcase+carry+proper+form">Video</a></div>
-</div>
-<div class="card s12">
-<div class="section-title"><h2>Mobility</h2><span class="badge">Mi + optional Sa</span></div>
-<div class="task"><input class="weekly" data-task="mob1" type="checkbox"><label><b>Mobility 1:</b> Open Books, 90/90 Hip Switches, Hüftbeuger-Stretch.</label><a class="video" target="_blank" href="https://www.mytpi.com/articles/fitness/5-exercises-for-increasing-thoracic-spine-mobility-in-your-golf-swing">Video</a></div>
-<div class="task"><input class="weekly" data-task="mob2" type="checkbox"><label><b>Mobility 2:</b> Torso Rotation, Windmills, Schulter-/Lat-Stretch.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=golf+mobility+thoracic+hip+shoulder">Video</a></div>
+<div class="titleRow"><h2>Kraft B</h2><span class="badge">Donnerstag</span></div>
+<div class="task"><input class="weekly" data-task="lunge" type="checkbox"><label><b>Kettlebell Reverse Lunge:</b> 3 × 8 je Seite.</label><div class="ref"><a class="video" target="_blank" href="https://www.muscleandstrength.com/exercises/kettlebell-reverse-lunge">Übungsvideo</a></div></div>
+<div class="task"><input class="weekly" data-task="shoulderpress" type="checkbox"><label><b>Seated Dumbbell Press:</b> 3 × 8–10.</label><div class="ref"><a class="video" target="_blank" href="https://www.muscleandstrength.com/exercises/seated-dumbbell-press.html">Übungsvideo</a></div></div>
+<div class="task"><input class="weekly" data-task="row" type="checkbox"><label><b>One-Arm Dumbbell Row:</b> 3 × 8–10 je Seite.</label><div class="ref"><a class="video" target="_blank" href="https://www.muscleandstrength.com/exercises/one-arm-dumbbell-row.html">Übungsvideo</a></div></div>
+<div class="task"><input class="weekly" data-task="hipthrust" type="checkbox"><label><b>Barbell Hip Thrust:</b> 3 × 8–10.</label><div class="ref"><a class="video" target="_blank" href="https://www.muscleandstrength.com/exercises/barbell-hip-thrust">Übungsvideo</a></div></div>
+<div class="task"><input class="weekly" data-task="carry" type="checkbox"><label><b>Single-Arm Farmer Carry:</b> 3 × 25–40 Meter je Seite.</label><div class="ref"><a class="video" target="_blank" href="https://www.muscleandstrength.com/exercises/suitcase-carry">Übungsvideo</a></div></div>
 </div>
 </section>
 
-<section id="season" class="grid" style="margin-top:14px">
-<div class="card s12"><h2>Saisonphasen 2026</h2>
-<table id="seasonTable"><thead><tr><th>Zeitraum</th><th>Phase</th><th>Schwerpunkt</th></tr></thead><tbody>
-<tr><td>20.07.–16.08.</td><td>Grundlagenphase</td><td>Kontakt, Routine, kurzes Spiel, Kraftbasis</td></tr>
-<tr><td>17.08.–27.09.</td><td>Aufbau- & Turnierphase</td><td>Streuung, Scoring, erste Turniere</td></tr>
-<tr><td>28.09.–31.10.</td><td>Leistungsphase</td><td>Turnierroutine, Wedge-Distanzen, Fehlerbegrenzung</td></tr>
-<tr><td>01.11.–30.11.</td><td>Übergangsphase</td><td>Technik stabilisieren und Kraft aufbauen</td></tr>
-<tr><td>01.12.–31.12.</td><td>Off-Season</td><td>Mobility, Grundkraft und Technik ohne Score-Druck</td></tr>
-</tbody></table></div>
+<section id="mobility" class="grid" style="margin-top:14px">
+<div class="card s12">
+<div class="titleRow"><h2>Mobility</h2><span class="badge">Mittwoch + optional Samstag</span></div>
+<div class="task"><input class="weekly" data-task="openbook" type="checkbox"><label><b>Open Book Rotation:</b> 2 × 8 je Seite.</label><div class="ref"><a class="video" target="_blank" href="https://www.mytpi.com/articles/fitness/5-exercises-for-increasing-thoracic-spine-mobility-in-your-golf-swing">TPI Thorax-Mobility</a></div></div>
+<div class="task"><input class="weekly" data-task="hip90" type="checkbox"><label><b>90/90 Hip Switch:</b> 2 × 8 je Seite.</label><div class="ref"><a class="video" target="_blank" href="https://www.muscleandstrength.com/exercises/90-90-hip-switch">Übungsvideo</a></div></div>
+<div class="task"><input class="weekly" data-task="hipflexor" type="checkbox"><label><b>Half-Kneeling Hip Flexor Stretch:</b> 2 × 30 Sekunden je Seite.</label><div class="ref"><a class="video" target="_blank" href="https://www.muscleandstrength.com/exercises/kneeling-hip-flexor-stretch">Übungsvideo</a></div></div>
+<div class="task"><input class="weekly" data-task="ankle" type="checkbox"><label><b>Knee-to-Wall Ankle Mobilisation:</b> 2 × 10 je Seite.</label><div class="ref"><a class="video" target="_blank" href="https://www.muscleandstrength.com/exercises/ankle-mobility-drill">Übungsvideo</a></div></div>
+</div>
+</section>
+
+<section id="courses" class="grid" style="margin-top:14px">
+<div class="card s7">
+<h2>Golfplätze verwalten</h2>
+<label class="field">Neuen Golfplatz hinzufügen
+<input id="newCourse" type="text" placeholder="z. B. Golfclub München Eichenried">
+</label>
+<div class="actions" style="margin-top:10px"><button class="action" id="addCourseBtn">Golfplatz hinzufügen</button></div>
+<div class="courseList" id="courseList"></div>
+</div>
+<div class="card s5">
+<h2>Standardplatz</h2>
+<label class="field">Vorauswahl für neue Runden
+<select id="defaultCourse"></select>
+</label>
+<p class="small">Du kannst bei jeder Runde trotzdem einen anderen gespeicherten Platz auswählen oder direkt einen neuen Namen eingeben.</p>
+</div>
 </section>
 
 <section id="tracker" class="grid" style="margin-top:14px">
 <div class="card s12">
-<h2>Runden-Tracker</h2>
+<h2>Runde erfassen</h2>
 <div class="grid">
-<div class="s4"><label>Datum<input id="date" type="text" placeholder="20.07.2026"></label></div>
-<div class="s4"><label>Platz<input id="course" type="text" value="Golfclub München-Riem"></label></div>
-<div class="s4"><label>Löcher<select id="holes"><option>9</option><option>18</option></select></label></div>
-<div class="s4"><label>Score<input id="score" type="number"></label></div>
-<div class="s4"><label>Putts<input id="putts" type="number"></label></div>
-<div class="s4"><label>Strafschläge<input id="penalties" type="number"></label></div>
-<div class="s12"><label>Notiz<textarea id="notes" rows="3"></textarea></label></div>
+<div class="s4"><label class="field">Datum<input id="date" type="date"></label></div>
+<div class="s4"><label class="field">Golfplatz<select id="roundCourse"></select></label></div>
+<div class="s4"><label class="field">Anderer Platz<input id="customRoundCourse" type="text" placeholder="Optional"></label></div>
+<div class="s4"><label class="field">Löcher<select id="holes"><option value="9">9</option><option value="18">18</option></select></label></div>
+<div class="s4"><label class="field">Score<input id="score" type="number" min="1"></label></div>
+<div class="s4"><label class="field">Putts<input id="putts" type="number" min="0"></label></div>
+<div class="s4"><label class="field">Strafschläge<input id="penalties" type="number" min="0"></label></div>
+<div class="s4"><label class="field">Abschläge im Spiel<input id="teesInPlay" type="number" min="0"></label></div>
+<div class="s4"><label class="field">Fehltreffer<input id="mishits" type="number" min="0"></label></div>
+<div class="s12"><label class="field">Notiz<textarea id="notes" rows="3" placeholder="Typischer Fehler, bester Schlag, taktische Entscheidung …"></textarea></label></div>
 </div>
-<div class="actions" style="margin-top:12px"><button class="action" onclick="addRound()">Runde speichern</button></div>
-<div style="overflow:auto;margin-top:16px"><table id="roundTable"><thead><tr><th>Datum</th><th>Platz</th><th>Löcher</th><th>Score</th><th>Putts</th><th>Strafe</th><th>Notiz</th></tr></thead><tbody></tbody></table></div>
+<div class="actions" style="margin-top:12px">
+<button class="action" id="saveRoundBtn">Runde speichern</button>
+<button class="action secondary" id="exportBtn">Daten exportieren</button>
+</div>
+<div style="overflow:auto;margin-top:16px">
+<table id="roundTable"><thead><tr><th>Datum</th><th>Golfplatz</th><th>Löcher</th><th>Score</th><th>Putts</th><th>Strafe</th><th>Notiz</th></tr></thead><tbody></tbody></table>
+</div>
 </div>
 </section>
-<div class="footer">Rudi Golf Saisonplan 2026 · Wochenfortschritt und Runden werden lokal gespeichert</div>
+<div class="footer">Rudi Golf Performance · Daten bleiben lokal in deinem Browser</div>
 </main>
-<script>
-const weeks=[{n:1,kw:30,label:'KW 30 · 20.07.–26.07.2026',phase:'Grundlagenphase',focus:'Kontakt, Pre-Shot-Routine, kurzes Spiel, stabile Kraftbasis',volume:'3 Golf + 2 Kraft + 2 Mobility'},{n:2,kw:31,label:'KW 31 · 27.07.–02.08.2026',phase:'Grundlagenphase',focus:'Kontakt, Pre-Shot-Routine, kurzes Spiel, stabile Kraftbasis',volume:'3 Golf + 2 Kraft + 2 Mobility'},{n:3,kw:32,label:'KW 32 · 03.08.–09.08.2026',phase:'Grundlagenphase',focus:'Kontakt, Pre-Shot-Routine, kurzes Spiel, stabile Kraftbasis',volume:'3 Golf + 2 Kraft + 2 Mobility'},{n:4,kw:33,label:'KW 33 · 10.08.–16.08.2026',phase:'Grundlagenphase',focus:'Kontakt, Pre-Shot-Routine, kurzes Spiel, stabile Kraftbasis',volume:'3 Golf + 2 Kraft + 2 Mobility'},{n:5,kw:34,label:'KW 34 · 17.08.–23.08.2026',phase:'Aufbau- & Turnierphase',focus:'Streuung, Scoring, erste Turniere, Course Management',volume:'3 Golf + 2 Kraft + 2 Mobility'},{n:6,kw:35,label:'KW 35 · 24.08.–30.08.2026',phase:'Aufbau- & Turnierphase',focus:'Streuung, Scoring, erste Turniere, Course Management',volume:'3 Golf + 2 Kraft + 2 Mobility'},{n:7,kw:36,label:'KW 36 · 31.08.–06.09.2026',phase:'Aufbau- & Turnierphase',focus:'Streuung, Scoring, erste Turniere, Course Management',volume:'3 Golf + 2 Kraft + 2 Mobility'},{n:8,kw:37,label:'KW 37 · 07.09.–13.09.2026',phase:'Aufbau- & Turnierphase',focus:'Streuung, Scoring, erste Turniere, Course Management',volume:'3 Golf + 2 Kraft + 2 Mobility'},{n:9,kw:38,label:'KW 38 · 14.09.–20.09.2026',phase:'Aufbau- & Turnierphase',focus:'Streuung, Scoring, erste Turniere, Course Management',volume:'3 Golf + 2 Kraft + 2 Mobility'},{n:10,kw:39,label:'KW 39 · 21.09.–27.09.2026',phase:'Aufbau- & Turnierphase',focus:'Streuung, Scoring, erste Turniere, Course Management',volume:'3 Golf + 2 Kraft + 2 Mobility'},{n:11,kw:40,label:'KW 40 · 28.09.–04.10.2026',phase:'Leistungsphase',focus:'Turnierroutine, Wedge-Distanzen, Fehlerbegrenzung',volume:'2–3 Golf + 2 Kraft + 2 Mobility'},{n:12,kw:41,label:'KW 41 · 05.10.–11.10.2026',phase:'Leistungsphase',focus:'Turnierroutine, Wedge-Distanzen, Fehlerbegrenzung',volume:'2–3 Golf + 2 Kraft + 2 Mobility'},{n:13,kw:42,label:'KW 42 · 12.10.–18.10.2026',phase:'Leistungsphase',focus:'Turnierroutine, Wedge-Distanzen, Fehlerbegrenzung',volume:'2–3 Golf + 2 Kraft + 2 Mobility'},{n:14,kw:43,label:'KW 43 · 19.10.–25.10.2026',phase:'Leistungsphase',focus:'Turnierroutine, Wedge-Distanzen, Fehlerbegrenzung',volume:'2–3 Golf + 2 Kraft + 2 Mobility'},{n:15,kw:44,label:'KW 44 · 26.10.–01.11.2026',phase:'Leistungsphase',focus:'Turnierroutine, Wedge-Distanzen, Fehlerbegrenzung',volume:'2–3 Golf + 2 Kraft + 2 Mobility'},{n:16,kw:45,label:'KW 45 · 02.11.–08.11.2026',phase:'Übergangsphase',focus:'Technik stabilisieren, Hallen-/Rangearbeit, Kraft aufbauen',volume:'2 Golf + 2 Kraft + 2 Mobility'},{n:17,kw:46,label:'KW 46 · 09.11.–15.11.2026',phase:'Übergangsphase',focus:'Technik stabilisieren, Hallen-/Rangearbeit, Kraft aufbauen',volume:'2 Golf + 2 Kraft + 2 Mobility'},{n:18,kw:47,label:'KW 47 · 16.11.–22.11.2026',phase:'Übergangsphase',focus:'Technik stabilisieren, Hallen-/Rangearbeit, Kraft aufbauen',volume:'2 Golf + 2 Kraft + 2 Mobility'},{n:19,kw:48,label:'KW 48 · 23.11.–29.11.2026',phase:'Übergangsphase',focus:'Technik stabilisieren, Hallen-/Rangearbeit, Kraft aufbauen',volume:'2 Golf + 2 Kraft + 2 Mobility'},{n:20,kw:49,label:'KW 49 · 30.11.–06.12.2026',phase:'Übergangsphase',focus:'Technik stabilisieren, Hallen-/Rangearbeit, Kraft aufbauen',volume:'2 Golf + 2 Kraft + 2 Mobility'},{n:21,kw:50,label:'KW 50 · 07.12.–13.12.2026',phase:'Off-Season',focus:'Beweglichkeit, Grundkraft, Technik ohne Ergebnisdruck',volume:'1–2 Golf + 2 Kraft + 3 Mobility'},{n:22,kw:51,label:'KW 51 · 14.12.–20.12.2026',phase:'Off-Season',focus:'Beweglichkeit, Grundkraft, Technik ohne Ergebnisdruck',volume:'1–2 Golf + 2 Kraft + 3 Mobility'},{n:23,kw:52,label:'KW 52 · 21.12.–27.12.2026',phase:'Off-Season',focus:'Beweglichkeit, Grundkraft, Technik ohne Ergebnisdruck',volume:'1–2 Golf + 2 Kraft + 3 Mobility'},{n:24,kw:53,label:'KW 53 · 28.12.–31.12.2026',phase:'Off-Season',focus:'Beweglichkeit, Grundkraft, Technik ohne Ergebnisdruck',volume:'1–2 Golf + 2 Kraft + 3 Mobility'}];
-let currentWeek=Number(localStorage.getItem("seasonCurrentWeek")||1);
-const weekly=[...document.querySelectorAll(".weekly")];
-const ws=document.getElementById("weekSelect");
-weeks.forEach(w=>{const b=document.createElement("button");b.className="week-btn";b.textContent="KW "+w.kw;b.onclick=()=>{currentWeek=w.n;localStorage.setItem("seasonCurrentWeek",currentWeek);loadWeek()};ws.appendChild(b)});
 
-function weekKey(){return "seasonWeek_"+currentWeek}
-function getState(){return JSON.parse(localStorage.getItem(weekKey())||"{}")}
-function saveWeek(){const s={};weekly.forEach(x=>s[x.dataset.task]=x.checked);localStorage.setItem(weekKey(),JSON.stringify(s));updateProgress()}
+<script>
+"use strict";
+const WEEKS=[{"id": "2026-KW30", "kw": 30, "label": "KW 30", "dates": "20.07.–26.07.2026", "phase": "Grundlagen", "focus": "Kontakt, Setup, Routine und Standardschläge"}, {"id": "2026-KW31", "kw": 31, "label": "KW 31", "dates": "27.07.–02.08.2026", "phase": "Grundlagen", "focus": "Kontakt, Setup, Routine und Standardschläge"}, {"id": "2026-KW32", "kw": 32, "label": "KW 32", "dates": "03.08.–09.08.2026", "phase": "Grundlagen", "focus": "Kontakt, Setup, Routine und Standardschläge"}, {"id": "2026-KW33", "kw": 33, "label": "KW 33", "dates": "10.08.–16.08.2026", "phase": "Grundlagen", "focus": "Kontakt, Setup, Routine und Standardschläge"}, {"id": "2026-KW34", "kw": 34, "label": "KW 34", "dates": "17.08.–23.08.2026", "phase": "Aufbau & Turnier", "focus": "Streuung, Scoring, erste Turniere und Course Management"}, {"id": "2026-KW35", "kw": 35, "label": "KW 35", "dates": "24.08.–30.08.2026", "phase": "Aufbau & Turnier", "focus": "Streuung, Scoring, erste Turniere und Course Management"}, {"id": "2026-KW36", "kw": 36, "label": "KW 36", "dates": "31.08.–06.09.2026", "phase": "Aufbau & Turnier", "focus": "Streuung, Scoring, erste Turniere und Course Management"}, {"id": "2026-KW37", "kw": 37, "label": "KW 37", "dates": "07.09.–13.09.2026", "phase": "Aufbau & Turnier", "focus": "Streuung, Scoring, erste Turniere und Course Management"}, {"id": "2026-KW38", "kw": 38, "label": "KW 38", "dates": "14.09.–20.09.2026", "phase": "Aufbau & Turnier", "focus": "Streuung, Scoring, erste Turniere und Course Management"}, {"id": "2026-KW39", "kw": 39, "label": "KW 39", "dates": "21.09.–27.09.2026", "phase": "Aufbau & Turnier", "focus": "Streuung, Scoring, erste Turniere und Course Management"}, {"id": "2026-KW40", "kw": 40, "label": "KW 40", "dates": "28.09.–04.10.2026", "phase": "Leistung", "focus": "Turnierroutine, Wedge-Distanzen und Fehlerbegrenzung"}, {"id": "2026-KW41", "kw": 41, "label": "KW 41", "dates": "05.10.–11.10.2026", "phase": "Leistung", "focus": "Turnierroutine, Wedge-Distanzen und Fehlerbegrenzung"}, {"id": "2026-KW42", "kw": 42, "label": "KW 42", "dates": "12.10.–18.10.2026", "phase": "Leistung", "focus": "Turnierroutine, Wedge-Distanzen und Fehlerbegrenzung"}, {"id": "2026-KW43", "kw": 43, "label": "KW 43", "dates": "19.10.–25.10.2026", "phase": "Leistung", "focus": "Turnierroutine, Wedge-Distanzen und Fehlerbegrenzung"}, {"id": "2026-KW44", "kw": 44, "label": "KW 44", "dates": "26.10.–01.11.2026", "phase": "Leistung", "focus": "Turnierroutine, Wedge-Distanzen und Fehlerbegrenzung"}, {"id": "2026-KW45", "kw": 45, "label": "KW 45", "dates": "02.11.–08.11.2026", "phase": "Übergang", "focus": "Technik stabilisieren und Kraftbasis ausbauen"}, {"id": "2026-KW46", "kw": 46, "label": "KW 46", "dates": "09.11.–15.11.2026", "phase": "Übergang", "focus": "Technik stabilisieren und Kraftbasis ausbauen"}, {"id": "2026-KW47", "kw": 47, "label": "KW 47", "dates": "16.11.–22.11.2026", "phase": "Übergang", "focus": "Technik stabilisieren und Kraftbasis ausbauen"}, {"id": "2026-KW48", "kw": 48, "label": "KW 48", "dates": "23.11.–29.11.2026", "phase": "Übergang", "focus": "Technik stabilisieren und Kraftbasis ausbauen"}, {"id": "2026-KW49", "kw": 49, "label": "KW 49", "dates": "30.11.–06.12.2026", "phase": "Übergang", "focus": "Technik stabilisieren und Kraftbasis ausbauen"}, {"id": "2026-KW50", "kw": 50, "label": "KW 50", "dates": "07.12.–13.12.2026", "phase": "Off-Season", "focus": "Mobility, Kraft und Technik ohne Ergebnisdruck"}, {"id": "2026-KW51", "kw": 51, "label": "KW 51", "dates": "14.12.–20.12.2026", "phase": "Off-Season", "focus": "Mobility, Kraft und Technik ohne Ergebnisdruck"}, {"id": "2026-KW52", "kw": 52, "label": "KW 52", "dates": "21.12.–27.12.2026", "phase": "Off-Season", "focus": "Mobility, Kraft und Technik ohne Ergebnisdruck"}, {"id": "2026-KW53", "kw": 53, "label": "KW 53", "dates": "28.12.–31.12.2026", "phase": "Off-Season", "focus": "Mobility, Kraft und Technik ohne Ergebnisdruck"}];
+const DEFAULT_COURSES=["Golfclub München-Riem","Golfclub München Eichenried","Golfclub München Valley","Golfclub Olching","Golfclub Starnberg","Münchener Golf Club Straßlach"];
+let currentWeekId=localStorage.getItem("golf_current_week")||WEEKS[0].id;
+const weeklyChecks=[...document.querySelectorAll(".weekly")];
+
+function getWeek(){return WEEKS.find(w=>w.id===currentWeekId)||WEEKS[0]}
+function weekStorageKey(){return "golf_week_"+currentWeekId}
+function weekState(){try{return JSON.parse(localStorage.getItem(weekStorageKey())||"{}")}catch(e){return {}}}
+function saveWeek(){
+ const s={};weeklyChecks.forEach(c=>s[c.dataset.task]=c.checked);
+ localStorage.setItem(weekStorageKey(),JSON.stringify(s));updateProgress();
+}
 function loadWeek(){
- const w=weeks[currentWeek-1],s=getState();
- weekly.forEach(x=>x.checked=!!s[x.dataset.task]);
- [...document.querySelectorAll(".week-btn")].forEach((b,i)=>b.classList.toggle("active",i===currentWeek-1));
- document.getElementById("weekBadge").textContent="KW "+w.kw;
- document.getElementById("progressTitle").textContent="Fortschritt "+w.label;
+ const w=getWeek(),s=weekState();
+ weeklyChecks.forEach(c=>c.checked=Boolean(s[c.dataset.task]));
+ document.querySelectorAll(".weekbtn").forEach(b=>b.classList.toggle("active",b.dataset.id===currentWeekId));
+ document.getElementById("currentWeekBadge").textContent=w.label;
+ document.getElementById("weekDates").textContent=w.dates;
+ document.getElementById("weekFocus").textContent=w.focus;
  document.getElementById("phaseBadge").textContent=w.phase;
- document.getElementById("phaseTitle").textContent=w.phase;
+ document.getElementById("phaseName").textContent=w.phase;
  document.getElementById("phaseFocus").textContent=w.focus;
- document.getElementById("weekVolume").textContent=w.volume;
- document.getElementById("weekDates").textContent=w.label;
+ document.getElementById("progressTitle").textContent="Fortschritt "+w.label+" · "+w.dates;
  updateProgress();
 }
-function updateProgress(){const n=weekly.filter(x=>x.checked).length,p=Math.round(n/weekly.length*100);document.getElementById("progressLabel").textContent=p+"%";document.getElementById("progressBar").style.width=p+"%"}
-weekly.forEach(x=>x.addEventListener("change",saveWeek));
+function updateProgress(){
+ const done=weeklyChecks.filter(c=>c.checked).length;
+ const pct=Math.round(done/weeklyChecks.length*100);
+ document.getElementById("progressPct").textContent=pct+"%";
+ document.getElementById("progressBar").style.width=pct+"%";
+}
+function initWeeks(){
+ const bar=document.getElementById("weekbar");
+ WEEKS.forEach(w=>{
+   const b=document.createElement("button");b.type="button";b.className="weekbtn";b.dataset.id=w.id;b.textContent=w.label;
+   b.addEventListener("click",()=>{currentWeekId=w.id;localStorage.setItem("golf_current_week",currentWeekId);loadWeek()});
+   bar.appendChild(b);
+ });
+ weeklyChecks.forEach(c=>c.addEventListener("change",saveWeek));
+ loadWeek();
+}
 
-function rounds(){return JSON.parse(localStorage.getItem("seasonRounds")||"[]")}
-function renderRounds(){const body=document.querySelector("#roundTable tbody");body.innerHTML="";rounds().forEach(r=>{const tr=document.createElement("tr");[r.date,r.course,r.holes,r.score,r.putts,r.penalties,r.notes].forEach(v=>{const td=document.createElement("td");td.textContent=v||"–";tr.appendChild(td)});body.appendChild(tr)})}
-function v(id){return document.getElementById(id).value}
-function addRound(){if(!v("score")){alert("Bitte Score eintragen.");return}const a=rounds();a.unshift({date:v("date"),course:v("course"),holes:v("holes"),score:v("score"),putts:v("putts"),penalties:v("penalties"),notes:v("notes")});localStorage.setItem("seasonRounds",JSON.stringify(a));renderRounds()}
-loadWeek();renderRounds();
+function getCourses(){
+ try{
+  const saved=JSON.parse(localStorage.getItem("golf_courses")||"null");
+  return Array.isArray(saved)&&saved.length?saved:DEFAULT_COURSES.slice();
+ }catch(e){return DEFAULT_COURSES.slice()}
+}
+function saveCourses(courses){localStorage.setItem("golf_courses",JSON.stringify(courses));renderCourses()}
+function getDefaultCourse(){
+ const courses=getCourses();
+ return localStorage.getItem("golf_default_course")||courses[0]||"";
+}
+function renderCourses(){
+ const courses=getCourses(),list=document.getElementById("courseList"),def=document.getElementById("defaultCourse"),round=document.getElementById("roundCourse");
+ list.innerHTML="";def.innerHTML="";round.innerHTML="";
+ courses.forEach(name=>{
+  const item=document.createElement("div");item.className="courseItem";
+  const span=document.createElement("span");span.textContent=name;
+  const del=document.createElement("button");del.type="button";del.textContent="Löschen";
+  del.addEventListener("click",()=>{
+   const next=getCourses().filter(c=>c!==name);
+   if(!next.length) return alert("Mindestens ein Golfplatz muss gespeichert bleiben.");
+   if(getDefaultCourse()===name) localStorage.setItem("golf_default_course",next[0]);
+   saveCourses(next);
+  });
+  item.append(span,del);list.appendChild(item);
+  [def,round].forEach(sel=>{const o=document.createElement("option");o.value=name;o.textContent=name;sel.appendChild(o)});
+ });
+ const d=getDefaultCourse();def.value=courses.includes(d)?d:courses[0];round.value=def.value;
+}
+document.getElementById("addCourseBtn").addEventListener("click",()=>{
+ const input=document.getElementById("newCourse"),name=input.value.trim();
+ if(!name)return;
+ const courses=getCourses();
+ if(!courses.some(c=>c.toLowerCase()===name.toLowerCase()))courses.push(name);
+ input.value="";saveCourses(courses);
+});
+document.getElementById("defaultCourse").addEventListener("change",e=>{
+ localStorage.setItem("golf_default_course",e.target.value);
+ document.getElementById("roundCourse").value=e.target.value;
+});
+
+function getRounds(){try{return JSON.parse(localStorage.getItem("golf_rounds")||"[]")}catch(e){return []}}
+function renderRounds(){
+ const body=document.querySelector("#roundTable tbody");body.innerHTML="";
+ getRounds().forEach(r=>{
+  const tr=document.createElement("tr");
+  [["Datum",r.date],["Golfplatz",r.course],["Löcher",r.holes],["Score",r.score],["Putts",r.putts],["Strafe",r.penalties],["Notiz",r.notes]].forEach(([label,val])=>{
+   const td=document.createElement("td");td.dataset.label=label;td.textContent=val||"–";tr.appendChild(td);
+  });
+  body.appendChild(tr);
+ });
+}
+document.getElementById("saveRoundBtn").addEventListener("click",()=>{
+ const score=document.getElementById("score").value;
+ if(!score)return alert("Bitte den Score eintragen.");
+ const custom=document.getElementById("customRoundCourse").value.trim();
+ const course=custom||document.getElementById("roundCourse").value;
+ if(custom){
+  const courses=getCourses();
+  if(!courses.some(c=>c.toLowerCase()===custom.toLowerCase())){courses.push(custom);saveCourses(courses)}
+ }
+ const rounds=getRounds();
+ rounds.unshift({
+  date:document.getElementById("date").value,
+  course,
+  holes:document.getElementById("holes").value,
+  score,
+  putts:document.getElementById("putts").value,
+  penalties:document.getElementById("penalties").value,
+  teesInPlay:document.getElementById("teesInPlay").value,
+  mishits:document.getElementById("mishits").value,
+  notes:document.getElementById("notes").value
+ });
+ localStorage.setItem("golf_rounds",JSON.stringify(rounds));
+ renderRounds();
+ ["score","putts","penalties","teesInPlay","mishits","notes","customRoundCourse"].forEach(id=>document.getElementById(id).value="");
+});
+document.getElementById("exportBtn").addEventListener("click",()=>{
+ const data={weeks:WEEKS,weekData:Object.fromEntries(WEEKS.map(w=>[w.id,JSON.parse(localStorage.getItem("golf_week_"+w.id)||"{}")])),courses:getCourses(),rounds:getRounds()};
+ const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
+ const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="rudi-golf-daten.json";a.click();URL.revokeObjectURL(a.href);
+});
+
+document.getElementById("date").value=new Date().toISOString().slice(0,10);
+initWeeks();renderCourses();renderRounds();
 </script>
 </body>
 </html>
