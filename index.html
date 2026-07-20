@@ -1,521 +1,276 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#173f2a">
 <title>Rudi Golf Performance Plan</title>
 <style>
 :root{
-  --bg:#f3f5f1;
-  --card:#ffffff;
-  --ink:#142218;
-  --muted:#69736c;
-  --line:#dfe5df;
-  --accent:#1f5f3b;
-  --accent-2:#dcebdd;
-  --danger:#8a2f2f;
-  --shadow:0 12px 30px rgba(20,34,24,.08);
+  --bg:#f3f5f1;--card:#fff;--ink:#142218;--muted:#68736c;--line:#dfe5df;
+  --accent:#1f5f3b;--dark:#173f2a;--soft:#dcebdd;--soft2:#edf4ee;
+  --shadow:0 12px 30px rgba(20,34,24,.08)
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;
-  background:linear-gradient(180deg,#eef3ec 0%,var(--bg) 220px);
-  color:var(--ink);
+  margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;
+  background:linear-gradient(180deg,#eaf1e9 0,var(--bg) 240px);color:var(--ink)
 }
-header{
-  padding:26px 20px 18px;
-  max-width:1050px;
-  margin:auto;
-}
-.kicker{
-  text-transform:uppercase;
-  letter-spacing:.14em;
-  font-size:12px;
-  color:var(--accent);
-  font-weight:700;
-}
-h1{
-  margin:8px 0 8px;
-  font-size:clamp(30px,6vw,54px);
-  line-height:1;
-}
-.sub{
-  color:var(--muted);
-  max-width:760px;
-  line-height:1.55;
-}
-nav{
-  position:sticky;
-  top:0;
-  z-index:10;
-  backdrop-filter:blur(12px);
-  background:rgba(243,245,241,.9);
-  border-top:1px solid rgba(255,255,255,.7);
-  border-bottom:1px solid var(--line);
-}
-nav .wrap{
-  max-width:1050px;
-  margin:auto;
-  display:flex;
-  overflow:auto;
-  gap:8px;
-  padding:10px 14px;
-}
-nav a{
-  flex:0 0 auto;
-  color:var(--ink);
-  text-decoration:none;
-  padding:9px 12px;
-  border-radius:999px;
-  font-size:14px;
-  font-weight:650;
-}
-nav a:hover{background:var(--accent-2)}
-main{
-  max-width:1050px;
-  margin:auto;
-  padding:18px 16px 50px;
-}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(12,1fr);
-  gap:16px;
-}
-.card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:20px;
-  box-shadow:var(--shadow);
-}
-.span-12{grid-column:span 12}
-.span-8{grid-column:span 8}
-.span-6{grid-column:span 6}
-.span-4{grid-column:span 4}
-@media(max-width:820px){
-  .span-8,.span-6,.span-4{grid-column:span 12}
-}
-h2{font-size:24px;margin:0 0 14px}
-h3{font-size:17px;margin:0 0 10px}
-p{line-height:1.55}
-.metric{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-}
-.big{
-  font-size:34px;
-  font-weight:800;
-  letter-spacing:-.03em;
-}
-.small{font-size:13px;color:var(--muted)}
-.progress{
-  height:12px;
-  background:#edf0ec;
-  border-radius:999px;
-  overflow:hidden;
-}
-.progress > div{
-  height:100%;
-  width:0%;
-  background:var(--accent);
-  transition:.25s ease;
-}
-.week{
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:14px;
-  margin-top:12px;
-}
-.week-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  margin-bottom:10px;
-}
-.day{
-  display:grid;
-  grid-template-columns:110px 1fr;
-  gap:12px;
-  padding:10px 0;
-  border-top:1px solid var(--line);
-}
-.day:first-of-type{border-top:none}
-.day strong{color:var(--accent)}
-@media(max-width:560px){
-  .day{grid-template-columns:1fr}
-}
-.task{
-  display:flex;
-  gap:11px;
-  align-items:flex-start;
-  padding:10px 0;
-  border-top:1px solid var(--line);
-}
+header{max-width:1080px;margin:auto;padding:28px 18px 20px}
+.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:800}
+h1{font-size:clamp(32px,7vw,58px);line-height:.96;margin:10px 0}
+.sub{max-width:780px;color:var(--muted);line-height:1.55}
+nav{position:sticky;top:0;z-index:20;background:rgba(243,245,241,.92);backdrop-filter:blur(14px);border-block:1px solid var(--line)}
+nav .wrap{display:flex;gap:8px;overflow:auto;max-width:1080px;margin:auto;padding:10px 14px}
+nav a{white-space:nowrap;text-decoration:none;color:var(--ink);font-size:14px;font-weight:700;padding:9px 12px;border-radius:999px}
+nav a:hover{background:var(--soft)}
+main{max-width:1080px;margin:auto;padding:18px 15px 60px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow)}
+.s12{grid-column:span 12}.s8{grid-column:span 8}.s6{grid-column:span 6}.s4{grid-column:span 4}
+@media(max-width:820px){.s8,.s6,.s4{grid-column:span 12}}
+h2{font-size:24px;margin:0 0 14px}h3{font-size:17px;margin:0 0 8px}
+.small{font-size:13px;color:var(--muted)}.big{font-size:34px;font-weight:850;letter-spacing:-.04em}
+.badge{display:inline-block;background:var(--soft);color:var(--accent);font-size:12px;font-weight:800;padding:6px 10px;border-radius:999px}
+.progress{height:13px;background:#edf0ec;border-radius:999px;overflow:hidden}
+.progress div{height:100%;width:0;background:var(--accent);transition:.25s}
+.week-select{display:flex;gap:8px;overflow:auto;padding-bottom:4px}
+.week-btn{border:1px solid var(--line);background:white;color:var(--ink);padding:10px 14px;border-radius:999px;font-weight:800;cursor:pointer;white-space:nowrap}
+.week-btn.active{background:var(--dark);color:white;border-color:var(--dark)}
+.metric{display:flex;justify-content:space-between;align-items:center;gap:14px}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.session{border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:12px}
+.session-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px}
+.task{display:grid;grid-template-columns:24px 1fr auto;gap:10px;align-items:start;padding:11px 0;border-top:1px solid var(--line)}
 .task:first-of-type{border-top:none}
-.task input{
-  width:20px;height:20px;margin-top:1px;
-  accent-color:var(--accent);
+.task input{width:20px;height:20px;accent-color:var(--accent);margin:1px 0}
+.task label{line-height:1.45}
+.video{display:inline-flex;align-items:center;text-decoration:none;background:var(--soft2);color:var(--accent);font-size:12px;font-weight:800;padding:7px 10px;border-radius:999px}
+.video:hover{background:var(--soft)}
+.note{background:#f7faf7;border-left:4px solid var(--accent);padding:12px 14px;border-radius:12px;line-height:1.45}
+.day{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:11px 0;border-top:1px solid var(--line)}
+.day:first-child{border-top:none}.day strong{color:var(--accent)}
+@media(max-width:560px){.day{grid-template-columns:1fr}.task{grid-template-columns:24px 1fr}.task .video{grid-column:2;justify-self:start}}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+input[type=text],input[type=number],select,textarea{
+  width:100%;border:1px solid var(--line);border-radius:12px;padding:11px 12px;font:inherit;color:var(--ink);background:white
 }
-.task label{line-height:1.4}
-.badge{
-  display:inline-block;
-  background:var(--accent-2);
-  color:var(--accent);
-  border-radius:999px;
-  padding:6px 10px;
-  font-weight:700;
-  font-size:12px;
-}
-.note{
-  background:#f7faf7;
-  border-left:4px solid var(--accent);
-  padding:12px 14px;
-  border-radius:12px;
-  color:#304037;
-}
-table{
-  width:100%;
-  border-collapse:collapse;
-  font-size:14px;
-}
-th,td{
-  padding:11px 8px;
-  border-bottom:1px solid var(--line);
-  text-align:left;
-  vertical-align:top;
-}
-th{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
-input[type="number"],input[type="text"],select,textarea{
-  width:100%;
-  border:1px solid var(--line);
-  border-radius:12px;
-  padding:11px 12px;
-  font:inherit;
-  background:white;
-  color:var(--ink);
-}
-button{
-  border:0;
-  border-radius:12px;
-  padding:11px 14px;
-  background:var(--accent);
-  color:white;
-  font-weight:750;
-  cursor:pointer;
-}
-button.secondary{
-  background:#e9eeea;
-  color:var(--ink);
-}
+button.action{border:0;border-radius:12px;padding:11px 14px;background:var(--accent);color:white;font-weight:800;cursor:pointer}
+button.secondary{background:#e8eeea;color:var(--ink)}
 .actions{display:flex;gap:10px;flex-wrap:wrap}
-.readiness-item{
-  display:flex;
-  gap:10px;
-  padding:10px 0;
-  border-top:1px solid var(--line);
-}
-.readiness-item:first-child{border-top:none}
-.footer{
-  text-align:center;
-  color:var(--muted);
-  padding:28px 0 10px;
-  font-size:13px;
-}
-.quote{
-  font-size:clamp(22px,4vw,34px);
-  line-height:1.2;
-  font-weight:800;
-  letter-spacing:-.02em;
-}
-ul{padding-left:18px}
+.footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0}
 </style>
 </head>
 <body>
 <header>
-  <div class="kicker">Golfclub München-Riem · Development Plan</div>
+  <div class="kicker">Golfclub München-Riem · 6-Wochen-Programm</div>
   <h1>Road to Single Handicap</h1>
-  <p class="sub">
-    Persönliches Trainingsprogramm für Rudi: vom Handicap 54 zu einem einstelligen Handicap.
-    Fokus: Ballkontakt, Streuung, kurzes Spiel, Course Management und frühzeitige Turnierroutine.
-  </p>
+  <p class="sub">Jede Woche besitzt ihre eigene Checkliste. Der Wochenfortschritt steigt nur, wenn die geplanten Golf-, Kraft- und Mobility-Einheiten der ausgewählten Woche erledigt sind.</p>
 </header>
 
-<nav>
-  <div class="wrap">
-    <a href="#dashboard">Dashboard</a>
-    <a href="#wochenplan">Wochenplan</a>
-    <a href="#einheiten">Einheiten</a>
-    <a href="#turnier">Turnierstart</a>
-    <a href="#tracker">Runden-Tracker</a>
-  </div>
-</nav>
+<nav><div class="wrap">
+  <a href="#dashboard">Dashboard</a><a href="#woche">Woche</a><a href="#golf">Golf</a>
+  <a href="#fitness">Kraft & Mobility</a><a href="#turnier">Turnier</a><a href="#tracker">Tracker</a>
+</div></nav>
 
 <main>
 <section id="dashboard" class="grid">
-  <div class="card span-4">
-    <div class="small">Aktuelles Ziel</div>
-    <div class="big">HCP &lt; 36</div>
-    <p class="small">Erste Etappe innerhalb von 3–6 Monaten bei drei Golfkontakten pro Woche.</p>
-  </div>
-  <div class="card span-4">
-    <div class="small">Technischer Fokus</div>
-    <div class="big">Kontakt</div>
-    <p class="small">Ball zuerst, Boden danach. Mehr reproduzierbare Treffer statt zusätzlicher Geschwindigkeit.</p>
-  </div>
-  <div class="card span-4">
-    <div class="small">Erstes Turnier</div>
-    <div class="big">4–6 Wo.</div>
-    <p class="small">9-Loch-Newcomer- oder After-Work-Turnier, sobald die Readiness-Kriterien erfüllt sind.</p>
-  </div>
+  <div class="card s4"><div class="small">Aktuelles Etappenziel</div><div class="big">HCP &lt; 36</div><p class="small">Zielkorridor: 3–6 Monate bei konsequenter Trainings- und Platzroutine.</p></div>
+  <div class="card s4"><div class="small">Golfkontakte</div><div class="big">3×</div><p class="small">Range, kurzes Spiel und Platzrunde pro Woche.</p></div>
+  <div class="card s4"><div class="small">Athletik</div><div class="big">2 + 2</div><p class="small">Zwei ausgewogene Ganzkörpereinheiten und mindestens zwei kurze Mobility-Blöcke.</p></div>
 
-  <div class="card span-8">
-    <div class="metric">
-      <div>
-        <h2>Wochenfortschritt</h2>
-        <div class="small">Alle Checklisten auf dieser Seite fließen hier ein.</div>
-      </div>
-      <div class="big" id="progressLabel">0%</div>
-    </div>
+  <div class="card s8">
+    <div class="metric"><div><h2 id="progressTitle">Fortschritt Woche 1</h2><div class="small">Nur Aufgaben dieser Woche werden gewertet.</div></div><div class="big" id="progressLabel">0%</div></div>
     <div class="progress"><div id="progressBar"></div></div>
   </div>
-
-  <div class="card span-4">
-    <span class="badge">Coach-Fokus</span>
-    <p class="quote">Ein kontrollierter 165-m-Schlag ist wertvoller als 105–195 m Streuung.</p>
-  </div>
+  <div class="card s4"><span class="badge">Coach-Fokus</span><p style="font-size:24px;font-weight:850;line-height:1.15">Qualität vor Geschwindigkeit.</p><p class="small">Ein stabiler 165-m-Schlag schlägt eine Streuung von 105 bis 195 Metern.</p></div>
 </section>
 
-<section id="wochenplan" class="grid" style="margin-top:16px">
-  <div class="card span-12">
-    <h2>Dein Wochenplan</h2>
-    <div class="week">
-      <div class="week-head">
-        <h3>Standardwoche · 3 Golfkontakte</h3>
-        <span class="badge">ca. 4–5 Stunden</span>
-      </div>
-      <div class="day">
-        <strong>Dienstag/Mittwoch</strong>
-        <div>
-          <b>Range · 75–90 Min.</b><br>
-          Kontakttraining, ein Technikthema, Zielkorridor, drei simulierte Löcher.
-        </div>
-      </div>
-      <div class="day">
-        <strong>Freitag</strong>
-        <div>
-          <b>Kurzes Spiel · 60–75 Min.</b><br>
-          Putten, Chippen mit einem Standardschläger, Pitches auf 30/50/70 m.
-        </div>
-      </div>
-      <div class="day">
-        <strong>Wochenende</strong>
-        <div>
-          <b>9 oder 18 Loch</b><br>
-          Scoretraining, konservative Ziele und vollständige Statistik.
-        </div>
-      </div>
-      <div class="day">
-        <strong>Alle 2–3 Wochen</strong>
-        <div>
-          <b>Trainerstunde · 45 Min.</b><br>
-          Nur ein technisches Hauptthema bearbeiten und danach selbstständig festigen.
-        </div>
-      </div>
-    </div>
-
-    <div class="week">
-      <div class="week-head">
-        <h3>Minimalwoche · wenn wenig Zeit ist</h3>
-        <span class="badge">ca. 2 Stunden</span>
-      </div>
-      <div class="day">
-        <strong>45 Minuten</strong>
-        <div>Kontaktblock + Zieltraining auf der Range.</div>
-      </div>
-      <div class="day">
-        <strong>30 Minuten</strong>
-        <div>1-Meter-Putts + Distanzkontrolle.</div>
-      </div>
-      <div class="day">
-        <strong>9 Loch</strong>
-        <div>Konsequentes Course Management und Statistik.</div>
-      </div>
+<section id="woche" class="grid" style="margin-top:16px">
+  <div class="card s12">
+    <div class="section-title"><h2>Ausgewählte Trainingswoche</h2><span class="badge" id="weekBadge">Woche 1</span></div>
+    <div class="week-select" id="weekSelect"></div>
+    <div class="session">
+      <div class="day"><strong>Montag</strong><div><b>Kraft A – Unterkörper, Brust & Core</b><br>Beinkraft, Hüftstreckung, horizontales Drücken und Anti-Rotation.</div></div>
+      <div class="day"><strong>Dienstag</strong><div><b>Golf – Range</b><br>Kontakt, Technikthema, Zielkorridor und simulierte Löcher.</div></div>
+      <div class="day"><strong>Mittwoch</strong><div><b>Mobility & aktive Erholung</b><br>Brustwirbelsäule, Hüfte, Sprunggelenke und Schultern.</div></div>
+      <div class="day"><strong>Donnerstag</strong><div><b>Kraft B – Ganzkörper</b><br>Einbeinige Kraft, Schulterdrücken, Zugbewegung, Core und kontrollierte Rotation.</div></div>
+      <div class="day"><strong>Freitag</strong><div><b>Golf – Kurzes Spiel</b><br>Putten, Chippen und definierte Pitch-Distanzen.</div></div>
+      <div class="day"><strong>Samstag</strong><div><b>Frei / optional Golf</b><br>Keine feste Krafteinheit. Optional Range, lockere Runde oder 10 Minuten Mobility.</div></div>
+      <div class="day"><strong>Sonntag</strong><div><b>Golf – 9 oder 18 Loch</b><br>Course Management und vollständige Statistik.</div></div>
     </div>
   </div>
 </section>
 
-<section id="einheiten" class="grid" style="margin-top:16px">
-  <div class="card span-6">
-    <h2>Einheit 1 · Range</h2>
-    <div class="task"><input class="check" type="checkbox" id="r1"><label for="r1"><b>10 Min.</b> mobilisieren, halbe Schwünge, 10 lockere Wedge-/9i-Schläge</label></div>
-    <div class="task"><input class="check" type="checkbox" id="r2"><label for="r2"><b>25 Min.</b> Bodenlinie: Ball vor der Linie, Treffpunkt zuerst, dann Boden</label></div>
-    <div class="task"><input class="check" type="checkbox" id="r3"><label for="r3"><b>20 Min.</b> ein Technikthema: 5 Probeschwünge, 5 Drill-Bälle, 5 normale Bälle</label></div>
-    <div class="task"><input class="check" type="checkbox" id="r4"><label for="r4"><b>20 Min.</b> Zielkorridor mit 8i/7i/6i; mindestens 6 von 10 spielbar</label></div>
-    <div class="task"><input class="check" type="checkbox" id="r5"><label for="r5"><b>10 Min.</b> drei imaginäre Löcher mit wechselnden Schlägern spielen</label></div>
-    <p class="note"><b>Kontakt-Test:</b> 20 Bälle, 2 Punkte sauber, 1 Punkt spielbar, 0 Punkte grober Fehlschlag. Erstes Ziel: 28/40 Punkte.</p>
+<section id="golf" class="grid" style="margin-top:16px">
+  <div class="card s6">
+    <div class="section-title"><h2>Golf 1 · Range</h2><span class="badge">75–90 Min.</span></div>
+    <div class="task"><input class="weekly" data-task="range-warmup" type="checkbox"><label><b>Warm-up:</b> Mobilisieren, halbe Schwünge, zehn lockere Schläge mit Wedge oder 9er-Eisen.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=PGA+golf+dynamic+warm+up">Video</a></div>
+    <div class="task"><input class="weekly" data-task="lowpoint" type="checkbox"><label><b>Bodenlinien-Drill:</b> Ball zuerst, Boden danach. 20 bewertete Bälle.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=golf+low+point+line+drill+ball+first">Video</a></div>
+    <div class="task"><input class="weekly" data-task="techblock" type="checkbox"><label><b>Technikblock:</b> 5 Probeschwünge, 5 Drill-Bälle, 5 normale Bälle. Nur ein Schwungthema.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=golf+practice+block+drill+transfer+practice">Video</a></div>
+    <div class="task"><input class="weekly" data-task="corridor" type="checkbox"><label><b>Zielkorridor:</b> 15–20 Bälle mit 8i/7i/6i. Ziel: mindestens 6 von 10 spielbar.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=golf+dispersion+target+practice+drill">Video</a></div>
+    <div class="task"><input class="weekly" data-task="simholes" type="checkbox"><label><b>Drei simulierte Löcher:</b> Schläger wechseln, vollständige Routine, jeden Ball neu bewerten.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=golf+range+simulate+holes+practice">Video</a></div>
+    <p class="note"><b>KPI:</b> Kontakt-Test mindestens 28 von 40 Punkten. Geschwindigkeit ist in dieser Phase kein Trainingsziel.</p>
   </div>
 
-  <div class="card span-6">
-    <h2>Einheit 2 · Kurzes Spiel</h2>
-    <div class="task"><input class="check" type="checkbox" id="k1"><label for="k1"><b>1-Meter-Putts:</b> 30 Versuche, Ziel zunächst 20 Treffer</label></div>
-    <div class="task"><input class="check" type="checkbox" id="k2"><label for="k2"><b>Distanzputten:</b> je 3 Bälle aus 5, 8 und 12 Metern</label></div>
-    <div class="task"><input class="check" type="checkbox" id="k3"><label for="k3"><b>9-Loch-Putting-Test:</b> neun verschiedene Putts zählen</label></div>
-    <div class="task"><input class="check" type="checkbox" id="k4"><label for="k4"><b>Chippen:</b> zunächst überwiegend mit PW oder GW</label></div>
-    <div class="task"><input class="check" type="checkbox" id="k5"><label for="k5"><b>Pitchen:</b> kontrollierte Längen auf 30, 50 und 70 Meter</label></div>
-    <p class="note"><b>Priorität:</b> Ein reproduzierbarer Standardschlag pro Situation. Noch keine zehn Varianten erzwingen.</p>
+  <div class="card s6">
+    <div class="section-title"><h2>Golf 2 · Kurzes Spiel</h2><span class="badge">60–75 Min.</span></div>
+    <div class="task"><input class="weekly" data-task="putt1m" type="checkbox"><label><b>1-Meter-Putts:</b> 30 Versuche. Erstes Ziel: mindestens 20 Treffer.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=PGA+one+meter+putting+drill">Video</a></div>
+    <div class="task"><input class="weekly" data-task="lagputt" type="checkbox"><label><b>Distanzputten:</b> je drei Bälle aus 5, 8 und 12 Metern. Zielzone maximal eine Schlägerlänge.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=PGA+lag+putting+distance+control+drill">Video</a></div>
+    <div class="task"><input class="weekly" data-task="putttest" type="checkbox"><label><b>9-Loch-Putting-Test:</b> Neun unterschiedliche Putts spielen und Gesamtzahl notieren.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=9+hole+putting+test+golf">Video</a></div>
+    <div class="task"><input class="weekly" data-task="chip" type="checkbox"><label><b>Standardschip:</b> zunächst mit PW oder GW; kurze, mittlere und schwierigere Lage.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=PGA+basic+chip+shot+drill">Video</a></div>
+    <div class="task"><input class="weekly" data-task="pitch" type="checkbox"><label><b>Pitch-Leiter:</b> kontrollierte Schläge auf 30, 50 und 70 Meter.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=golf+wedge+distance+ladder+30+50+70">Video</a></div>
   </div>
 
-  <div class="card span-12">
-    <h2>Einheit 3 · Platztraining</h2>
+  <div class="card s12">
+    <div class="section-title"><h2>Golf 3 · Platzrunde</h2><span class="badge">9 oder 18 Loch</span></div>
+    <div class="task"><input class="weekly" data-task="round" type="checkbox"><label><b>Runde gespielt:</b> Längsten sicheren Abschlagschläger wählen; taktisches Par: Par 3 = 5, Par 4 = 7, Par 5 = 8.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=golf+course+management+high+handicap+beginner">Video</a></div>
+    <div class="task"><input class="weekly" data-task="stats" type="checkbox"><label><b>Statistik vollständig:</b> Score, Putts, Strafschläge, Abschläge im Spiel, Fehltreffer und Schläge innerhalb 50 m erfassen.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=golf+stats+tracking+improve+handicap">Video</a></div>
+  </div>
+</section>
+
+<section id="fitness" class="grid" style="margin-top:16px">
+  <div class="card s6">
+    <div class="section-title"><h2>Kraft A · Montag</h2><span class="badge">45–55 Min.</span></div>
+    <div class="task"><input class="weekly" data-task="goblet" type="checkbox"><label><b>Goblet Squat:</b> 3 × 6–8 für Beine, Rumpfspannung und stabile Knieachse.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=goblet+squat+proper+form">Video</a></div>
+    <div class="task"><input class="weekly" data-task="rdl" type="checkbox"><label><b>Romanian Deadlift:</b> 3 × 6–8 für Gesäß, hintere Oberschenkel und Hüftstreckung.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=romanian+deadlift+proper+form">Video</a></div>
+    <div class="task"><input class="weekly" data-task="press" type="checkbox"><label><b>Kurzhantel-Bankdrücken oder Liegestütz:</b> 3 × 8–10 für Brust, Trizeps und vordere Schulter.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=dumbbell+bench+press+proper+form">Video</a></div>
+    <div class="task"><input class="weekly" data-task="pallof" type="checkbox"><label><b>Pallof Press:</b> 3 × 10 je Seite für Anti-Rotation und stabile Kraftübertragung.</label><a class="video" target="_blank" href="https://www.mytpi.com/articles/fitness/7-anti-rotation-exercises-to-maximize-clubhead-speed">Video</a></div>
+    <div class="task"><input class="weekly" data-task="calf" type="checkbox"><label><b>Wadenheben:</b> 3 × 12–15 für Sprunggelenksstabilität und Bodenkraft.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=standing+calf+raise+proper+form">Video</a></div>
+  </div>
+
+  <div class="card s6">
+    <div class="section-title"><h2>Kraft B · Donnerstag</h2><span class="badge">45–55 Min.</span></div>
+    <div class="task"><input class="weekly" data-task="split" type="checkbox"><label><b>Reverse Lunge oder Split Squat:</b> 3 × 8 je Seite für einbeinige Kraft und Balance.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=reverse+lunge+proper+form">Video</a></div>
+    <div class="task"><input class="weekly" data-task="shoulderpress" type="checkbox"><label><b>Halbkniendes Kurzhantel-Schulterdrücken:</b> 3 × 8 je Seite für Schulterkraft und Rumpfkontrolle.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=half+kneeling+dumbbell+shoulder+press+proper+form">Video</a></div>
+    <div class="task"><input class="weekly" data-task="row" type="checkbox"><label><b>Einarmiges Rudern:</b> 3 × 8–10 je Seite als Ausgleich zur Druckbewegung.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=one+arm+dumbbell+row+proper+form">Video</a></div>
+    <div class="task"><input class="weekly" data-task="glutebridge" type="checkbox"><label><b>Glute Bridge oder Hip Thrust:</b> 3 × 10–12 für Gesäß und Beckenkontrolle.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=glute+bridge+proper+form">Video</a></div>
+    <div class="task"><input class="weekly" data-task="carry" type="checkbox"><label><b>Suitcase Carry:</b> 3 × 25–40 m je Seite für seitliche Rumpfstabilität.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=suitcase+carry+proper+form">Video</a></div>
+    <div class="task"><input class="weekly" data-task="deadbug" type="checkbox"><label><b>Dead Bug:</b> 3 × 6–10 je Seite für kontrollierte Core-Spannung.</label><a class="video" target="_blank" href="https://www.youtube.com/results?search_query=dead+bug+exercise+proper+form">Video</a></div>
+  </div>
+
+  <div class="card s12">
+    <div class="section-title"><h2>Mobility · zweimal pro Woche</h2><span class="badge">10–15 Min.</span></div>
     <div class="grid">
-      <div class="span-4">
-        <h3>Abschlag</h3>
-        <p>Den längsten Schläger wählen, mit dem mindestens 7 von 10 Bällen im Spiel bleiben. Driver ist keine Pflicht.</p>
+      <div class="s6">
+        <div class="task"><input class="weekly" data-task="mob1" type="checkbox"><label><b>Mobility-Einheit 1:</b> Open Books 2 × 8 je Seite; 90/90 Hip Switches 2 × 8; Hüftbeuger-Stretch 2 × 30 Sek.</label><a class="video" target="_blank" href="https://www.mytpi.com/articles/fitness/5-exercises-for-increasing-thoracic-spine-mobility-in-your-golf-swing">Video</a></div>
       </div>
-      <div class="span-4">
-        <h3>Dein taktisches Par</h3>
-        <p>Par 3 = 5<br>Par 4 = 7<br>Par 5 = 8</p>
-      </div>
-      <div class="span-4">
-        <h3>Schadensbegrenzung</h3>
-        <p>Nach Fehlern zurück ins Spiel. Keine Schläge durch enge Fenster und keine unnötige Fahnenjagd.</p>
+      <div class="s6">
+        <div class="task"><input class="weekly" data-task="mob2" type="checkbox"><label><b>Mobility-Einheit 2:</b> Torso Rotation 2 × 8; Windmills 2 × 6; Schulter-/Lat-Stretch 2 × 30 Sek.</label><a class="video" target="_blank" href="https://www.mytpi.com/improve-my-game/swing-characteristics/loss-of-posture">Video</a></div>
       </div>
     </div>
+    <p class="note"><b>Belastungssteuerung:</b> Krafttraining nie bis zum technischen Versagen. Vor Turnieren oder wichtigen Runden die letzte schwere Beineinheit mindestens 48 Stunden vorher absolvieren.</p>
   </div>
 </section>
 
 <section id="turnier" class="grid" style="margin-top:16px">
-  <div class="card span-7">
+  <div class="card s7">
     <h2>Turnier-Readiness</h2>
-    <div class="readiness-item"><input class="check" type="checkbox" id="t1"><label for="t1">Ich kann 9 Loch in angemessenem Spieltempo absolvieren.</label></div>
-    <div class="readiness-item"><input class="check" type="checkbox" id="t2"><label for="t2">Ich kenne die Grundlagen zu Aus, Penalty Areas, provisorischem Ball und Ballaufnahme.</label></div>
-    <div class="readiness-item"><input class="check" type="checkbox" id="t3"><label for="t3">Ich kann schlechte Schläge akzeptieren, ohne die Gruppe aufzuhalten.</label></div>
-    <div class="readiness-item"><input class="check" type="checkbox" id="t4"><label for="t4">Ich habe einen Abschlagschläger, der meistens im Spiel bleibt.</label></div>
-    <div class="readiness-item"><input class="check" type="checkbox" id="t5"><label for="t5">Ich habe mindestens 3–5 vollständige 9-Loch-Runden gespielt.</label></div>
-    <p class="note" id="readinessText">Noch nicht bewertet.</p>
+    <div class="task"><input class="ready" data-ready="pace" type="checkbox"><label>9 Loch in angemessenem Spieltempo absolvieren.</label></div>
+    <div class="task"><input class="ready" data-ready="rules" type="checkbox"><label>Grundregeln zu Aus, Penalty Areas, provisorischem Ball und Ballaufnahme kennen.</label></div>
+    <div class="task"><input class="ready" data-ready="mental" type="checkbox"><label>Schlechte Schläge akzeptieren, ohne die Gruppe aufzuhalten.</label></div>
+    <div class="task"><input class="ready" data-ready="tee" type="checkbox"><label>Einen Abschlagschläger haben, der meistens im Spiel bleibt.</label></div>
+    <div class="task"><input class="ready" data-ready="rounds" type="checkbox"><label>Mindestens 3–5 vollständige 9-Loch-Runden gespielt.</label></div>
+    <p class="note" id="readinessText">0/5 Kriterien erfüllt.</p>
   </div>
-
-  <div class="card span-5">
-    <h2>6-Wochen-Fahrplan</h2>
+  <div class="card s5">
+    <h2>Turnier-Fahrplan</h2>
     <table>
       <tr><th>Phase</th><th>Schwerpunkt</th></tr>
-      <tr><td>Woche 1–2</td><td>Neue Eisen einspielen, Kontakt, zwei lockere 9-Loch-Runden</td></tr>
-      <tr><td>Woche 3–4</td><td>Pre-Shot-Routine, strikte Zählweise, Regeln, Platzstunde</td></tr>
+      <tr><td>Woche 1–2</td><td>Kontakt, Routine, zwei lockere 9-Loch-Runden</td></tr>
+      <tr><td>Woche 3–4</td><td>Strikte Zählweise, Regeln, Platztraining</td></tr>
       <tr><td>Woche 5–6</td><td>Erstes 9-Loch-Newcomer- oder After-Work-Turnier</td></tr>
     </table>
   </div>
 </section>
 
 <section id="tracker" class="grid" style="margin-top:16px">
-  <div class="card span-12">
-    <h2>Runden-Tracker</h2>
-    <p class="small">Die Einträge werden nur lokal auf deinem Gerät gespeichert.</p>
+  <div class="card s12">
+    <h2>Runden-Tracker</h2><p class="small">Einträge bleiben lokal im Browser auf diesem Gerät.</p>
     <div class="grid">
-      <div class="span-4"><label>Datum<input id="date" type="text" placeholder="z. B. 20.07.2026"></label></div>
-      <div class="span-4"><label>Platz<input id="course" type="text" value="Golfclub München-Riem"></label></div>
-      <div class="span-4"><label>Löcher<select id="holes"><option>9</option><option>18</option></select></label></div>
-      <div class="span-4"><label>Score<input id="score" type="number" min="1"></label></div>
-      <div class="span-4"><label>Putts<input id="putts" type="number" min="0"></label></div>
-      <div class="span-4"><label>Strafschläge<input id="penalties" type="number" min="0"></label></div>
-      <div class="span-4"><label>Abschläge im Spiel<input id="tees" type="number" min="0"></label></div>
-      <div class="span-4"><label>Fett / dünn / getoppt<input id="mishits" type="number" min="0"></label></div>
-      <div class="span-4"><label>Schläge innerhalb 50 m<input id="inside50" type="number" min="0"></label></div>
-      <div class="span-12"><label>Notiz<textarea id="notes" rows="3" placeholder="Typischer Fehler, bester Schlag, Course-Management-Entscheidung ..."></textarea></label></div>
+      <div class="s4"><label>Datum<input id="date" type="text" placeholder="20.07.2026"></label></div>
+      <div class="s4"><label>Platz<input id="course" type="text" value="Golfclub München-Riem"></label></div>
+      <div class="s4"><label>Löcher<select id="holes"><option>9</option><option>18</option></select></label></div>
+      <div class="s4"><label>Score<input id="score" type="number"></label></div>
+      <div class="s4"><label>Putts<input id="putts" type="number"></label></div>
+      <div class="s4"><label>Strafschläge<input id="penalties" type="number"></label></div>
+      <div class="s4"><label>Abschläge im Spiel<input id="tees" type="number"></label></div>
+      <div class="s4"><label>Fehltreffer<input id="mishits" type="number"></label></div>
+      <div class="s4"><label>Schläge innerhalb 50 m<input id="inside50" type="number"></label></div>
+      <div class="s12"><label>Notiz<textarea id="notes" rows="3"></textarea></label></div>
     </div>
-    <div class="actions" style="margin-top:14px">
-      <button onclick="addRound()">Runde speichern</button>
-      <button class="secondary" onclick="exportData()">Daten exportieren</button>
-      <button class="secondary" onclick="clearRounds()">Runden löschen</button>
-    </div>
-    <div style="overflow:auto;margin-top:18px">
-      <table id="roundTable">
-        <thead><tr><th>Datum</th><th>Platz</th><th>Löcher</th><th>Score</th><th>Putts</th><th>Strafe</th><th>Fehltreffer</th><th>Notiz</th></tr></thead>
-        <tbody></tbody>
-      </table>
-    </div>
+    <div class="actions" style="margin-top:14px"><button class="action" onclick="addRound()">Runde speichern</button><button class="action secondary" onclick="clearRounds()">Runden löschen</button></div>
+    <div style="overflow:auto;margin-top:18px"><table id="roundTable"><thead><tr><th>Datum</th><th>Platz</th><th>Löcher</th><th>Score</th><th>Putts</th><th>Strafe</th><th>Fehltreffer</th><th>Notiz</th></tr></thead><tbody></tbody></table></div>
   </div>
 </section>
-
-<div class="footer">Rudi Golf Performance Plan · Daten bleiben lokal im Browser</div>
+<div class="footer">Rudi Golf Performance Plan · Fortschritt und Runden werden lokal gespeichert</div>
 </main>
 
 <script>
-const checks=[...document.querySelectorAll('.check')];
+let currentWeek=Number(localStorage.getItem("golfCurrentWeek")||1);
+const weekly=[...document.querySelectorAll(".weekly")];
+const ready=[...document.querySelectorAll(".ready")];
 
-function saveChecks(){
-  const state={};
-  checks.forEach(c=>state[c.id]=c.checked);
-  localStorage.setItem('golfChecks',JSON.stringify(state));
-  updateProgress();
+function keyForWeek(){return "golfWeek"+currentWeek}
+function getWeekState(){return JSON.parse(localStorage.getItem(keyForWeek())||"{}")}
+function saveWeek(){
+  const s={}; weekly.forEach(x=>s[x.dataset.task]=x.checked);
+  localStorage.setItem(keyForWeek(),JSON.stringify(s)); updateProgress()
 }
-function loadChecks(){
-  const state=JSON.parse(localStorage.getItem('golfChecks')||'{}');
-  checks.forEach(c=>c.checked=!!state[c.id]);
-  updateProgress();
+function loadWeek(){
+  const s=getWeekState(); weekly.forEach(x=>x.checked=!!s[x.dataset.task]);
+  document.getElementById("weekBadge").textContent="Woche "+currentWeek;
+  document.getElementById("progressTitle").textContent="Fortschritt Woche "+currentWeek;
+  document.querySelectorAll(".week-btn").forEach((b,i)=>b.classList.toggle("active",i+1===currentWeek));
+  updateProgress()
 }
 function updateProgress(){
-  const done=checks.filter(c=>c.checked).length;
-  const pct=Math.round(done/checks.length*100);
-  document.getElementById('progressBar').style.width=pct+'%';
-  document.getElementById('progressLabel').textContent=pct+'%';
-  const t=['t1','t2','t3','t4','t5'].map(id=>document.getElementById(id).checked);
-  const n=t.filter(Boolean).length;
-  const el=document.getElementById('readinessText');
-  el.innerHTML=n===5?'<b>Turnierbereit.</b> Jetzt ein 9-Loch-Newcomer- oder After-Work-Turnier einplanen.':
-    '<b>'+n+'/5 Kriterien erfüllt.</b> Das erste Turnier ist vorgesehen, sobald alle fünf Punkte stabil erfüllt sind.';
+  const done=weekly.filter(x=>x.checked).length;
+  const p=Math.round(done/weekly.length*100);
+  document.getElementById("progressLabel").textContent=p+"%";
+  document.getElementById("progressBar").style.width=p+"%";
 }
-checks.forEach(c=>c.addEventListener('change',saveChecks));
+const ws=document.getElementById("weekSelect");
+for(let i=1;i<=6;i++){
+  const b=document.createElement("button");b.className="week-btn";b.textContent="Woche "+i;
+  b.onclick=()=>{currentWeek=i;localStorage.setItem("golfCurrentWeek",i);loadWeek()};
+  ws.appendChild(b)
+}
+weekly.forEach(x=>x.addEventListener("change",saveWeek));
 
-function getRounds(){
-  return JSON.parse(localStorage.getItem('golfRounds')||'[]');
+function loadReady(){
+  const s=JSON.parse(localStorage.getItem("golfReady")||"{}");
+  ready.forEach(x=>x.checked=!!s[x.dataset.ready]);updateReady()
 }
-function setRounds(v){
-  localStorage.setItem('golfRounds',JSON.stringify(v));
-  renderRounds();
+function saveReady(){
+  const s={};ready.forEach(x=>s[x.dataset.ready]=x.checked);
+  localStorage.setItem("golfReady",JSON.stringify(s));updateReady()
 }
-function val(id){return document.getElementById(id).value}
-function addRound(){
-  if(!val('score')){alert('Bitte mindestens den Score eintragen.');return}
-  const rounds=getRounds();
-  rounds.unshift({
-    date:val('date'),course:val('course'),holes:val('holes'),
-    score:val('score'),putts:val('putts'),penalties:val('penalties'),
-    tees:val('tees'),mishits:val('mishits'),inside50:val('inside50'),
-    notes:val('notes')
-  });
-  setRounds(rounds);
-  ['score','putts','penalties','tees','mishits','inside50','notes'].forEach(id=>document.getElementById(id).value='');
+function updateReady(){
+  const n=ready.filter(x=>x.checked).length;
+  document.getElementById("readinessText").innerHTML=n===5?"<b>Turnierbereit.</b> Jetzt ein 9-Loch-Turnier einplanen.":"<b>"+n+"/5 Kriterien erfüllt.</b>"
 }
+ready.forEach(x=>x.addEventListener("change",saveReady));
+
+function rounds(){return JSON.parse(localStorage.getItem("golfRounds")||"[]")}
 function renderRounds(){
-  const body=document.querySelector('#roundTable tbody');
-  body.innerHTML='';
-  getRounds().forEach(r=>{
-    const tr=document.createElement('tr');
-    [r.date,r.course,r.holes,r.score,r.putts,r.penalties,r.mishits,r.notes].forEach(x=>{
-      const td=document.createElement('td');td.textContent=x||'–';tr.appendChild(td);
-    });
-    body.appendChild(tr);
-  });
+  const body=document.querySelector("#roundTable tbody");body.innerHTML="";
+  rounds().forEach(r=>{const tr=document.createElement("tr");
+    [r.date,r.course,r.holes,r.score,r.putts,r.penalties,r.mishits,r.notes].forEach(v=>{const td=document.createElement("td");td.textContent=v||"–";tr.appendChild(td)});
+    body.appendChild(tr)
+  })
 }
-function clearRounds(){
-  if(confirm('Alle gespeicherten Runden wirklich löschen?')) setRounds([]);
+function v(id){return document.getElementById(id).value}
+function addRound(){
+  if(!v("score")){alert("Bitte mindestens den Score eintragen.");return}
+  const a=rounds();a.unshift({date:v("date"),course:v("course"),holes:v("holes"),score:v("score"),putts:v("putts"),penalties:v("penalties"),tees:v("tees"),mishits:v("mishits"),inside50:v("inside50"),notes:v("notes")});
+  localStorage.setItem("golfRounds",JSON.stringify(a));renderRounds()
 }
-function exportData(){
-  const data={checks:JSON.parse(localStorage.getItem('golfChecks')||'{}'),rounds:getRounds()};
-  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(blob);
-  a.download='rudi-golf-training-daten.json';
-  a.click();
-  URL.revokeObjectURL(a.href);
-}
-loadChecks();
-renderRounds();
+function clearRounds(){if(confirm("Alle Runden löschen?")){localStorage.removeItem("golfRounds");renderRounds()}}
+loadWeek();loadReady();renderRounds();
 </script>
 </body>
 </html>
